@@ -25,6 +25,12 @@ default_attributes(
         'config/session.yml' => 'config/session.yml',
         'config/mongoid.yml' => 'config/mongoid.yml'
     }
+  },
+
+  "nodejs" => {
+    "versions"        => ["0.8.4"],
+    "default"         => "0.8.4",
+    "global_packages" => ["coffee-script", "stylus"]
   }
 )
 
@@ -40,9 +46,9 @@ override_attributes(
         'name'  => 'rake'
       }],
       'rvmrc'         => {
-        'rvm_project_rvmrc'             => 1,
-        'rvm_gemset_create_on_use_flag' => 1,
-        'rvm_pretty_print_flag'         => 1
+        'rvm_project_rvmrc'             => 0,
+        'rvm_gemset_create_on_use_flag' => 0,
+        'rvm_pretty_print_flag'         => 0
       }
     }]
   }
