@@ -14,3 +14,8 @@ execute "apt-get upgrade -y"
 package 'ntp' do
   action [:install]
 end
+
+# install additional packages needed
+package 'build-essential' do
+  action [:install]
+end
