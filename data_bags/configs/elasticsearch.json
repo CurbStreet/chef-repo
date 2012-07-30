@@ -1,0 +1,10 @@
+{
+  "id" : "elasticsearch",
+
+  "stage" : {
+    "url"     :   "http://localhost:9200",
+    "log_file":   "elasticsearch.log",
+    "log_level":  "info"
+  }
+
+}

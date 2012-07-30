@@ -1,0 +1,19 @@
+{
+  "id" : "mongoid",
+
+  "stage" : {
+    "sessions"  : {
+      "default" : {
+        "database"  : "curbstreet",
+        "hosts"     : ["localhost:27017"]
+      },
+      "options" : {
+        "allow_dynamic_fields"        : false,
+        "scope_overwrite_exception"   : true,
+        "use_activesupport_time_zone" : false,
+        "use_utc"                     : true
+      }
+    }
+  }
+
+}

@@ -12,6 +12,19 @@ default_attributes(
       "groups"        => ["sudo", "admin", "sysadmin"],
       "passwordless"  => true
     }
+  },
+
+  "curbstreet" => {
+    "repository"  => "git@github.com:CurbStreet/curbstreet.rb.git",
+    "revision"    => "HEAD",
+    "environment" => {
+      "RACK_ENV"  => "development"
+    },
+    "config_files_to_symlink" => {
+        'config/elasticsearch.yml' => 'config/elasticsearch.yml',
+        'config/session.yml' => 'config/session.yml',
+        'config/mongoid.yml' => 'config/mongoid.yml'
+    }
   }
 )
 
