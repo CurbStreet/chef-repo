@@ -19,3 +19,6 @@ end
 package 'build-essential' do
   action :install
 end
+
+# add sys admins
+include_recipe "users::sysadmins"

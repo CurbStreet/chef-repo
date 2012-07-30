@@ -1,0 +1,7 @@
+{
+  "id" : "aqian",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNdvFAYaYlO+urgslqCXEx0j+VG4mAJ6shLDELIcWIwNB/XHvMvSLPYChMtiq3Pu4EtqDIDSoaiDr701JbD20jx9nCGQu4qEGYcrM9p2mzJ/umrFT+AZTbMRecG8fWx7EXM6S3c5BgNW1afljey1bubvcrBA7iqbJM3vno3QSLivl2HdpAxUMor40FcPIlrU9RUQ9xtdP0AGII3uwLC0wMESBopLaCTtYQblkCCfGFWwzdwYxwZPVEi9vK2dYGgODGv7K+9ZvKuSLTMJt5l/wducXlpdLSAVVVY7xITJhkh8SJ3/Y8/Zcq0mJWtUe0knmknsucOZ2dTvV9sO/jpgf1 aq1018@gmail.com",
+  "groups": ["sudoer"],
+  "shell": "/bin/bash",
+  "comment": "Aaron Qian"
+}
