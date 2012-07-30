@@ -1,0 +1,32 @@
+{
+  "name": "hosts",
+  "description": "Writes host aliases",
+  "long_description": "Description\n===========\nThis cookbook defines a recipe that writes host aliases (an `/etc/hosts` file) \nbased on nodes listed in an attribute.\n\nUsage\n=====\nDefine a list of node names in the `node[:host_aliases]` attribute. For example, \nyou might add something like the following in a role:\n    \n    name \"role_with_host_aliases\"\n    descript \"this is a sample role\"\n    run_list \"recipe[hosts]\"\n\n    override_attributes(\n      \"host_aliases\" => [\"node01\", \"node02\"]\n    )\n\nLicense and Author\n==================\n\nAuthor:: Brad Montgomery <bmontgomery@coroutine.com>\n\nCopyright 2012,  Coroutine LLC.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "bradmontgomery",
+  "maintainer_email": "bmontgomery@coroutine.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "hosts": "Wites the /etc/hosts file based on attribute values"
+  },
+  "version": "0.1.1"
+}
