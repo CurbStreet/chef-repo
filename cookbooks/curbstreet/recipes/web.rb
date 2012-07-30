@@ -1,5 +1,4 @@
-web = data_bag_item('apps', 'web')
-
+p "==========================="
+p node["rvm"]
 # setup rvm
-node['rvm'] = web['rvm']
 include_recipe "rvm::user"
