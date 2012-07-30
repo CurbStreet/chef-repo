@@ -5,4 +5,4 @@ description      "Installs/Configures curbstreet"
 
 version          "0.1"
 
-depends 'users'
+depends 'users', 'sudo'
