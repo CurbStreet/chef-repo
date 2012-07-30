@@ -20,7 +20,10 @@ package 'build-essential' do
   action :install
 end
 
-include_recipe "users::sysadmins"
+users_manage "sysadmin" do
+  group_id 2300
+  action [ :remove, :create ]
+end
 
 users_manage "deployer" do
   group_id 2400
