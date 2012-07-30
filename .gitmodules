@@ -1,0 +1,3 @@
+[submodule "cookbooks/hosts"]
+	path = cookbooks/hosts
+	url = git://github.com/coroutine/chef-hosts.git
