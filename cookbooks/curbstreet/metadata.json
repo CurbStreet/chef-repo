@@ -8,7 +8,8 @@
   "platforms": {
   },
   "dependencies": {
-    "users": ">= 0.0.0"
+    "users": ">= 0.0.0",
+    "sudo": ">= 0.0.0"
   },
   "recommendations": {
   },
