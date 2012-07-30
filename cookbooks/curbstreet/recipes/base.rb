@@ -1,7 +1,9 @@
 # set node name as the hostname
-execute "hostname #{node.name}"
+hostname = node.name.gsub '_', '-'
+
+execute "hostname #{hostname}"
 file '/etc/hostname' do
-  content "#{node.name}\n"
+  content "#{hostname}\n"
 end
 
 # start a upgrade
