@@ -215,3 +215,20 @@ deploy "#{app_dir}" do
   end
 end
 
+
+# setup reverse proxy
+include_recipe "nginx::default"
+
+template "#{node[:nginx][:dir]}/sites-available/#{app_name}.conf" do
+  source "nginx_proxy.conf.erb"
+  owner   "root"
+  group   "root"
+  mode    "0664"
+  notifies :restart, "service[nginx]"
+  varaiables({
+    :app_name     => app_name,
+    :doc_root     => "#{app_dir}/current/public",
+    :domain_name  => node['domain_name']
+  })
+end
+

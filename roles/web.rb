@@ -3,10 +3,13 @@ description "The web app role"
 run_list [
   "curbstreet::base",
   "mongodb::default",
+  "elasticsearch::autoconf",
   "curbstreet::web"
 ]
 
 default_attributes(
+  "domain_name" => "stage.curbstreet.com",
+
   "authorization" => {
     "sudo" => {
       "users"         => ["root"],
