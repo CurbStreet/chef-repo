@@ -12,10 +12,10 @@ execute "apt-get upgrade -y"
 
 # setup ntp service
 package 'ntp' do
-  action [:install]
+  action :install
 end
 
 # install additional packages needed
 package 'build-essential' do
-  action [:install]
+  action :install
 end
