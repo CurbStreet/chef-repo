@@ -225,10 +225,11 @@ template "#{node[:nginx][:dir]}/sites-available/#{app_name}.conf" do
   group   "root"
   mode    "0664"
   notifies :restart, "service[nginx]"
-  varaiables({
+  variables({
     :app_name     => app_name,
-    :doc_root     => "#{app_dir}/current/public",
+    :doc_dir      => "#{app_dir}/current/public",
     :domain_name  => node['domain_name']
   })
 end
 
+nginx_site "#{app_name}.conf"
