@@ -12,12 +12,5 @@ default_attributes(
       "groups"        => ["sudo", "admin", "sysadmin"],
       "passwordless"  => true
     }
-  },
-  "rvm" => {
-    "user_installs" => {
-      'user'          => 'deployer',
-      'default_ruby'  => 'ruby-1.9.3p194',
-      'rubies'        => ['1.9.3p194']
-    }
   }
 )
