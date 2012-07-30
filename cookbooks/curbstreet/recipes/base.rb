@@ -20,6 +20,10 @@ package 'build-essential' do
   action :install
 end
 
+# setup /etc/sudoers
+include_recipe "sudo"
+
+# Add users
 users_manage "sysadmin" do
   group_id 2300
   action [ :remove, :create ]
