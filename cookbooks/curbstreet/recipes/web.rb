@@ -117,6 +117,18 @@ template "#{app_dir}/shared/ssh_wrapper.sh" do
   })
 end
 
+node['unicorn']['user'] = deploy_user
+node['unicorn']['group'] = deploy_group
+node['unicorn']['working_directory'] = "#{app_dir}/current"
+
+# create unicorn config
+template "#{app_dir}/shared/unicorn.conf.rb" do
+  permissions_setup.call self
+
+  source "unicorn.conf.rb.erb"
+  variables node['unicorn']
+end
+
 # create config directory
 directory "#{app_dir}/shared/config" do
   permissions_setup.call self
@@ -173,16 +185,33 @@ deploy "#{app_dir}" do
       code        "bundle install"
     end
   end
+
+  before_restart do
+    # build javascript and css
+    bash "compile asssets" do
+      user    deploy_user
+      group   deploy_group
+      cwd     "#{app_dir}/current"
+      environment 'HOME' => home_dir
+      code    <<-EOF
+      source #{home_dir}/.nvm/nvm.sh
+      cake build
+      EOF
+    end
+  end
+
+  restart_command do
+    # run unicorn
+    rvm_shell 'unicorn' do
+      ruby_string gemset_name
+      user        deploy_user
+      group       deploy_group
+      cwd         "#{app_dir}/current"
+      code        <<-EOF
+      kill -QUIT $(cat #{app_dir}/current/#{node['unicorn']['pid']})
+      bundle exec unicorn -D -E #{env} -c #{app_dir}/shared/unicorn.conf.rb
+      EOF
+    end
+  end
 end
 
-# build javascript and css
-bash "compile asssets" do
-  user    deploy_user
-  group   deploy_group
-  cwd     "#{app_dir}/current"
-  environment 'HOME' => home_dir
-  code    <<-EOF
-  source #{home_dir}/.nvm/nvm.sh
-  cake build
-  EOF
-end

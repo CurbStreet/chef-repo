@@ -31,6 +31,15 @@ default_attributes(
     "versions"        => ["0.8.4"],
     "default"         => "0.8.4",
     "global_packages" => ["coffee-script", "stylus"]
+  },
+
+  "unicorn" => {
+    "listen"            => "127.0.0.1:3000",
+    "pid"               => "tmp/pids/unicorn.pid",
+    "stderr_path"       => "log/unicorn_stderr.log",
+    "stdout_path"       => "log/unicorn_stdout.log",
+    "timeout"           => 3,
+    "worker_processes"  => 2
   }
 )
 

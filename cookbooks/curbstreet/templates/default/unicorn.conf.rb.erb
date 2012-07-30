@@ -1,0 +1,8 @@
+listen            '<%= @listen  %>'
+pid               '<%= @pid %>'
+stderr_path       '<%= @stderr_path %>'
+stdout_path       '<%= @stdout_path %>'
+timeout           <%= @timeout %>
+user              '<%= @user %>'<%= ", '#{@group}'" if @group %>
+worker_processes  <%= @worker_processes %>
+working_directory '<%= @working_directory %>'
