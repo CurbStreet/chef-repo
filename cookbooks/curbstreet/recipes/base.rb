@@ -9,7 +9,8 @@ end
 
 #restart hostname service
 service 'hostname' do
-  action [:restart]
+  provider Chef::Provider::Service::Upstart
+  action [:stop, :start]
 end
 
 # setup ntp service
