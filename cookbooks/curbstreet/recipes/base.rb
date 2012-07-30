@@ -7,6 +7,11 @@ file '/etc/hostname' do
   content "#{node.name}\n"
 end
 
+#restart hostname service
+service 'hostname' do
+  action [:restart]
+end
+
 # setup ntp service
 package 'ntp' do
   action [:install]
