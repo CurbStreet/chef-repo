@@ -1,5 +1,6 @@
 # start a upgrade
-execute "apt-get update && apt-get upgrade"
+execute "apt-get update"
+execute "apt-get upgrade -y"
 
 # set node name as the hostname
 file '/etc/hostname' do
