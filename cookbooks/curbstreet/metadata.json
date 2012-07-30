@@ -10,7 +10,8 @@
   "dependencies": {
     "users": ">= 0.0.0",
     "sudo": ">= 0.0.0",
-    "rvm": ">= 0.0.0"
+    "rvm": ">= 0.0.0",
+    "mongodb": ">= 0.0.0"
   },
   "recommendations": {
   },

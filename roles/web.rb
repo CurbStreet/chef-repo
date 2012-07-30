@@ -2,6 +2,7 @@ name "web"
 description "The web app role"
 run_list [
   "curbstreet::base",
+  "mongodb::default",
   "curbstreet::web"
 ]
 

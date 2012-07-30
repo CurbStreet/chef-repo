@@ -8,3 +8,4 @@ version          "0.1"
 depends 'users'
 depends 'sudo'
 depends 'rvm'
+depends 'mongodb'
